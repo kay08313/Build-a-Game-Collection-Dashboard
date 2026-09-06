@@ -1,8 +1,9 @@
+![Uploading projectscreenshot.PNG…]()
 # Build-a-Game-Collection-Dashboard
 my first readme push
 
 
-![Description of screenshot](./public/projectscreenshot.png)
+
 
 website feature
 

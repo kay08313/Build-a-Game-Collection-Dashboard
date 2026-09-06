@@ -1,4 +1,4 @@
-![GameVault Screenshot](./public/projectscreenscreenshot.PNG)
+![GameVault Screenshot](./projectscreenscreenshot.PNG)
 
 # Build-a-Game-Collection-Dashboard
 

@@ -1,9 +1,8 @@
-![Uploading projectscreenshot.PNG…]()
+![GameVault Screenshot](./public/projectscreenscreenshot.PNG)
+
 # Build-a-Game-Collection-Dashboard
+
 my first readme push
-
-
-
 
 website feature
 

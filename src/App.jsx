@@ -244,23 +244,6 @@ function App() {
     setGames(newList);
     setDisplayGames(newList);
   }
-  let card = [];
-
-  //add latest array display card into webpage
-  for (let i = 0; i < games.length; i++) {
-    const game = games[i];
-    card.push(
-      <Col key={i} sm={4}>
-        <Displaycard
-          imgsrc={game.img}
-          title={game.title}
-          year={game.year}
-          type={game.type}
-          rating={game.rating}
-        />
-      </Col>,
-    );
-  }
 
   const gamenum = games.length;
 

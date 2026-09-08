@@ -192,43 +192,23 @@ function GameForm({ onAddGame }) {
 }
 
 function FilterButton({ games, setDisplayGames }) {
-  function showFPS() {
-    const filtered = games.filter((game) => game.type === "FPS");
-    setDisplayGames(filtered);
-  }
-  function showAll() {
-    setDisplayGames(games);
-  }
-  function showIndie() {
-    const filtered = games.filter((game) => game.type === "Indie");
-    setDisplayGames(filtered);
-  }
-  function showOpenWorld() {
-    const filtered = games.filter((game) => game.type === "Open World");
-    setDisplayGames(filtered);
-  }
-  function showSinglePlayer() {
-    const filtered = games.filter((game) => game.type === "Single Player");
-    setDisplayGames(filtered);
-  }
-  function showMOBA() {
-    const filtered = games.filter((game) => game.type === "MOBA");
-    setDisplayGames(filtered);
-  }
-  function showHorror() {
-    const filtered = games.filter((game) => game.type === "Horror");
-    setDisplayGames(filtered);
+  function showType(type) {
+    setDisplayGames(
+      type === "All" ? games : games.filter((g) => g.type === type),
+    );
   }
 
   return (
     <>
-      <Button onClick={showAll}>Show All Games</Button>
-      <Button onClick={showFPS}>Show FPS Games</Button>
-      <Button onClick={showIndie}>Show Indie Games</Button>
-      <Button onClick={showOpenWorld}>Show Open World Games</Button>
-      <Button onClick={showSinglePlayer}>Show Single Player Games</Button>
-      <Button onClick={showMOBA}>Show MOBA Games</Button>
-      <Button onClick={showHorror}>Show Horror Games</Button>
+      <select onChange={(e) => showType(e.target.value)}>
+        <option value="All">Show All Games</option>
+        <option value="FPS">Show FPS Games</option>
+        <option value="Indie">Show Indie Games</option>
+        <option value="Open World">Show Open World Games</option>
+        <option value="Single Player">Show Single Player Games</option>
+        <option value="MOBA">Show MOBA Games</option>
+        <option value="Horror">Show Horror Games</option>
+      </select>
     </>
   );
 }
@@ -253,9 +233,13 @@ function App() {
         <Container>
           <Row>
             <Col sm={8}>
-              <Image src={controller} roundedCircle id="controller" />
+              <div id="gamespace">
+                <Image src={controller} roundedCircle id="controller" />
+                <h1 id="gametitle">Game Space</h1>
+              </div>
               <h1>Welcome to My Game Collection</h1>
             </Col>
+
             <Col sm={4}>
               <div id="gamecollected">
                 <p>Game Collected</p>
